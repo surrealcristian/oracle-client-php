@@ -1,0 +1,21 @@
+{
+    "name": "surrealcristian/oracle-client",
+    "description": "Small Oracle client.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cristian Cabrera",
+            "email": "surrealcristian@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6",
+        "ext-oci8": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "SurrealCristian\\": "src/"
+        }
+    }
+}
