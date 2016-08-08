@@ -1,5 +1,5 @@
 {
-    "name": "surrealcristian/oracle-client",
+    "name": "surrealcristian/oracle-client-php",
     "description": "Small Oracle client.",
     "type": "library",
     "license": "MIT",
