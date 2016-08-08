@@ -5,13 +5,15 @@ Small Oracle client.
 
 ## API
 
-### `public OracleClient::__construct ( string $username, string $password [, $connectionString = null [, $characterSet = null ]] )`
+```php
+public OracleClient::__construct ( string $username, string $password [, $connectionString = null [, $characterSet = null ]] )
 
-### `public array OracleClient::all ( string $sql [, array $bindings = null ] )`
+public array OracleClient::all ( string $sql [, array $bindings = null ] )
 
-### `public Generator OracleClient::yieldAll ( string $sql [, array $bindings = null ] )`
+public Generator OracleClient::yieldAll ( string $sql [, array $bindings = null ] )
 
-### `public integer OracleClient::execute ( string $sql [, array $bindings = null ] )`
+public integer OracleClient::execute ( string $sql [, array $bindings = null ] )
+```
 
 
 ## Usage
