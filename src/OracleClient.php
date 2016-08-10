@@ -8,6 +8,14 @@ class OracleClient
 {
     protected $conn;
 
+    /**
+     * Constructor.
+     *
+     * @param string $username         Username
+     * @param string $password         Password
+     * @param string $connectionString Connection string (see http://php.net/manual/en/function.oci-connect.php)
+     * @param string $characterSet     Character set
+     */
     public function __construct(
         $username, $password, $connectionString = null, $characterSet = null
     ) {
@@ -46,6 +54,14 @@ class OracleClient
         }
     }
 
+    /**
+     * Gets the rows as an array.
+     *
+     * @param string $sql      SQL query
+     * @param array  $bindings Bindings as an associative array
+     *
+     * @return array
+     */
     public function all($sql, array $bindings = null)
     {
         $statementId = oci_parse($this->conn, $sql);
@@ -107,6 +123,14 @@ class OracleClient
         return $rows;
     }
 
+    /**
+     * Yields the rows.
+     *
+     * @param string $sql      SQL query
+     * @param array  $bindings Bindings as an associative array
+     *
+     * @return Generator
+     */
     public function yieldAll($sql, array $bindings = null)
     {
         $statementId = oci_parse($this->conn, $sql);
@@ -151,6 +175,14 @@ class OracleClient
         oci_free_statement($statementId);
     }
 
+    /**
+     * Executes an INSERT, UPDATE or DELETE.
+     *
+     * @param string $sql      SQL query
+     * @param array  $bindings Bindings as an associative array
+     *
+     * @return integer Affected rows
+     */
     public function execute($sql, array $bindings = null)
     {
         $statementId = oci_parse($this->conn, $sql);
@@ -195,6 +227,9 @@ class OracleClient
         return $nRowsAffected;
     }
 
+    /**
+     * Commits the outstanding database transaction for the connection.
+     */
     public function commit()
     {
         if (oci_commit($this->conn) === false) {
