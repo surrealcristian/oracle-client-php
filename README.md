@@ -8,7 +8,7 @@ Small Oracle client.
 ```php
 public OracleClient::__construct ( string $username, string $password [, $connectionString = null [, $characterSet = null ]] )
 
-public array OracleClient::all ( string $sql [, array $bindings = null ] )
+public array OracleClient::fetchAll ( string $sql [, array $bindings = null ] )
 
 public Generator OracleClient::yieldAll ( string $sql [, array $bindings = null ] )
 
@@ -55,7 +55,9 @@ $bindings = [
 ];
 
 $nRowsAffected = $client->execute($sql, $bindings);
+
 var_dump($nRowsAffected);
+
 $client->commit();
 ```
 
