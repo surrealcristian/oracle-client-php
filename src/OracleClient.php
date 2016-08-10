@@ -62,7 +62,7 @@ class OracleClient
      *
      * @return array
      */
-    public function all($sql, array $bindings = null)
+    public function fetchAll($sql, array $bindings = null)
     {
         $statementId = oci_parse($this->conn, $sql);
 
